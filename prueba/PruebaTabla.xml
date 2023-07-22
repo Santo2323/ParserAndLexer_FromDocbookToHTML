@@ -1,0 +1,34 @@
+<!DOCTYPE article>
+<article>
+	<title>Titulo del coumento</title>
+	<informaltable>
+    <tgroup>
+      <thead>
+        <row>
+          <entry>Name</entry>
+          <entry>Description</entry>
+          <entry>Price</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row><asd>
+          <entry>Apple</entry>
+          <entry>A sweet, edible fruit produced by an apple tree</entry>
+          <entry>$1.00</entry>
+        </row>
+        <row>
+          <entry>Banana</entry>
+          <entry>A long, curved fruit that has yellow skin and soft, sweet, white flesh inside</entry>
+          <entry>$0.50</entry>
+        </row>
+      </tbody>
+	  <tfoot>
+	  	<row>
+		  <entry>Fruit</entry>
+		  <entry>No se q</entry>
+		  <entry><para><link xlink:href="https://www.google.com">Link a google</link></para></entry>
+		</row>
+	  </tfoot>
+    </tgroup>
+  </informaltable>
+</article>

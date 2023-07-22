@@ -1,0 +1,19 @@
+<!DOCTYPE article>
+<article>
+    <info>
+        <title>El titulo del articulo</title>
+        <author>
+            <firstname>Juan</firstname>
+            <surname>Perez</surname>
+        </author>
+    </info>
+    <section>
+        <title>Titulo para la seccion 1</title>
+    <para>
+        Esto es un parrafo
+    </para>
+    <para>
+        Otro parrafo.
+    </para>
+    </section>
+</article>

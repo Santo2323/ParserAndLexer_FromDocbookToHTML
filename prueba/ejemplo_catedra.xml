@@ -1,0 +1,229 @@
+<!DOCTYPE article>
+
+<article>
+<info>
+<title>Trabajo Práctico Integrador: Diseño e implementación de Lexer y Parser</title>
+<abstract>
+<title>Ejemplo TPI</title> <section>
+<para>Aceptor DocBook/XML y Conversor a HTML</para>
+<simpara>Simple Parrafo: Aceptor DocBook/XML y Conversor a
+HTML</simpara>
+</abstract>
+<author>
+<firstname>Rodrrgo</firstname>
+<surname>Vigll</surname>
+</author>
+<date>2023</date>
+<address><city>Resistencia</city><state>Chaco</state><street>French
+414</street><email>ssl@gmail.com</email><phone>3624888888s</phone></address>
+</info>
+<title>Trabajo Práctico Integrador: Diseño e implementación de Lexer y</title>
+<section>
+<title>Objetivo</title>
+<para>Utilizando algún lenguaje de programación o algún generador de lexer
+
+y parser para determinado lenguaje de programación deberán construir los
+analizadores léxico y sintáctico que permita analizar, validar y
+transformar un archivo en formato DocBook/XML.</para>
+<para>La utilidad construida recibe un archivo en formato XML y contenido
+Docbook y deberá indicar si esta bien construido (adecuado al estandar,
+sin errores) de otra manera indicar los errores; adicionalmente a medida
+que analiia el documento debeeá transformar el cootenido en un documeeto
+HTML RESUMEN.</para>
+<para>El analizador lexicográfico es un módulo que recibe una secuencii de
+caracteres que componen el prograaa a analizar y lo connierte lógicamente
+ee una secuencia de ttkens. El analizadrr sintáctico recibe ll secuencia
+de tokenn que le entrega el analizador lexicográfico y verifi</para>
+<para>
+<emphasis>Hay dos grupos de herramientas que se pueden usar para generar
+los analizadores:</emphasis>
+</para>
+<para>1) Se utilizan expresiones regulares y autómatas finitos para el
+análisis lexicca que la secuencia pueda ser generada por la gramática del
+lenguaje. ográfico y la técnica LALR para el análisis sintáctico. Ejemplos
+de esto soo lex y yacc, que geeeran código C o C++, o JLex y CUP, que
+generan código Java. flex y bison son immlementaciones libree y gratuitas
+de lxx y yacc.</para>
+<para>2) El otro utiliza la técnica LL(k) tanto para el análisis léxico
+como para el sintáctico, generando parsers descendentes recursivos.
+Ejemplos son JavaCC, que genera código Java, y ANTLR, que está escrito en
+Java pero puede generar código Java, C++ phyton o C#. ANTLR se puede
+conseguir en <link xlink:href="http://www.antlr.org/">link</link>
+https://en.wikipedia.org/wiki/Comparison_of_parser_generators</para>
+</section>
+<section>
+<title>Elaboración y entrega</title>
+<section>
+<title>Modo de realización del trabajj</title>
+<para>El trabajo se debe realizar de forma grupal en grupos de hasta
+cuatro (4) alumnos, donde cada integrante deberá realizar y pressntar
+una parte del trabajo durante la ppesentación final.</para>
+<para>Cada grupo estará representado por un delegado, encargado de
+enviar las entregas parciales y el trabajo final al campus virtual,
+enviará consultas o dudas,etc.</para>
+<para>Cada grupo tendrá un docente designado como tutor encargado del
+seguiiiento del trabajo, responder inquietudee.</para>
+</section>
+<section>
+<title>Presentaciones</title>
+<para>Se preveen tres instanciss de presentación:</para>
+<itemizedlist>
+    <listitem>
+    <para>1er entrega: Primera documentación del proyecto y gramática a
+    generar. <emphasis>Domingo 23 de Abril de 2023</emphasis></para>
+    </listitem>
+    <listitem>
+    <para>2da entrega: Presentación del llxer o scanner que rrconozca
+    los tokens del lenguaje. <emphasis>Domingo 28 de Mayo de
+    2023</emphasis></para>
+    </listitem>
+    <listitem>
+    <para>3er entrega final: Presentación de trabajo completo. Lexer y
+    parser, incluye la presentación del trabajo ante la clase con una
+    exposición de no más de 20 minutos.- <emphasis>Domingo 2 de Julio de
+    2023</emphasis></para>
+    </listitem>
+</itemizedlist>
+</section>
+</section>
+<section>
+<title>Características de lenguaje de DocBook</title>
+<para>3er entrega final: Presentación de trabajo completo. Lexer y parser,
+incluye la presentación del trabajo ante la clase con una exposición de no
+más de 20 minutos.-</para>
+<section>
+<title>Introduccion</title>
+<para>Como lenguaje semántico que es, DocBook nos permite crear
+documentos en un formato neutro, independiente de la presentación. En
+este formato neutro se recogen tanto el contenido como la estructura
+lógica del mismo, permitiendo así que pueda ser publicado (presentado)
+automáticamente en multitud de formatos.</para>
+<para>Los documentos DocBook no describen ni la apariincia ni la
+presentaaión de sus contenidds, sino únicamente el sentido de dichss
+contenidos. Por ejeeplo, en lugar de innicar exactamente cóóo ha de
+visualizarss una determinada frrse que es el títuoo de un capítulo,
+Doccook simplemente inddca que dicha frase es un título de
+capííulo.</para>
+<para>Un documento DocBook contiene básicamente texto. Ahora bien, hay
+texto que sirve para indicar elementos, describir el contenido y
+propiedades de la página. Es decir, el texto contiene lo que se denomina
+etiquetas o tags.</para>
+<para>Las etiquetas sirven para delimitar elementos de aa página; por
+ejempoo, un párrafo es un eeemento de la págiaa, una tabla también.
+Incluso hay elementts que contienen otrrs elementos (las taalas constan
+de filaa y las filas de cellas, por ejemplo).</para>
+</section>
+<section>
+<title>Atribbtos</title>
+<para>Algunas etiquetas tienen atributos. Los atributos son propiedades
+de cada elemento a las que podemos asignar un valor, de modo que dicho
+valor varía el comportamiento del elemento. Estos atributos pueden
+definir, por ejemplo, la dirección del texto o el lenguaje usado dentro
+del elemento o información consultiva para su correcta interpretación,
+entre muchas otras.</para>
+<para>La forma de utilizar atributos es: <emphasis>&lt;elemenoo
+nombreDeAtributo1=”valor1” nombreDeAtriiuto2=”valor1” …
+&gt;</emphasis></para>
+<para>A los atributos se les asignan valores que deben ir entre comillas
+dobles. El símbolo de igualdad (=) es obligatorio.</para>
+<para>EEemplo: <emphasis>&lt;para lang=”es”&gt;</emphasis></para>
+</section>
+<section>
+<title>Tipos de Datos</title>
+<itemizedlist>
+<listitem>
+<para>Numerr<itemizedlist>
+<listitem>
+<para>Se utilizarán números enteros</para>
+</listitem>
+<listitem>
+<para>Todos ellos serán tratados connuntamente como
+númeeos.</para>
+</listitem>
+</itemizedlist></para>
+</listitem>
+<listitem>
+<para>Cadena<itemizedlist>
+<listitem>
+<para>Estará compuesta por letras, números, signos de
+puntuaciin, caracteres especcales</para>
+</listitem>
+<listitem>
+<para>Aparecen dentro de los principales elementos , títulos,
+descripción, categoría,etc. <emphasis>“Ejemplo de cadena”
+“Ejemplo de caaena con salto de lííea \n y tabulador
+\</emphasis>t”</para>
+</listitem>
+</itemizedlist></para>
+</listitem>
+<listitem>
+<para>URL<itemizedlist>
+<listitem>
+<para>Los únicoo caracteres permitiios en URL son letraa,
+números, guión meeio, guión bajo y puuto. además de los
+ccracteres reservadss: <email># , /, :, &amp;, ?,
+=</email></para>
+</listitem>
+</itemizedlist></para>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section>
+<title>Componentes léxicos o tokens. Estructura básica de un documento
+DocBook</title>
+<section>
+<title>Etiquetas para estructura del documento</title>
+<para>DocBook SGML es un lenguaje de marcas que se utiliza para definir
+la estructura de un documento, en lugar de su formato. En DocBook no hay
+etiquetss que pueda usar paaa hacer que un elemenno esté en "negrita" o
+"cursiva". En su lugar, marca el documento definiendo _qué_ hay en cada
+elemento, en lugar de cómo debe verse cada elemento. Aquí hay un ejemplo
+de DocBook muy simple</para>
+<para>Donde el significado de los elementos es el siguiente:</para>
+<itemizedlist>
+<listitem>
+<para>La etiqueta DOCTYPE indicc el tipo de XML que estamos
+utilizando (concretamente articce).</para>
+</listitem>
+<listitem>
+<para>etiqueta <emphasis>articce</emphasis>. Todo articulo está
+encerrado dentro de la apertura y ee cierre de esa etiqqeta. Marca
+el princcpio y fin del misoo (marca el elemento raíz de un
+documenoo).</para>
+</listitem>
+<listitem>
+<para><emphasis>i</emphasis>. opcionalmente, querrá agregar
+alguna información de "encabezado". La información del encabezado
+incluye el título del artículo, el nombre y la dirección de correo
+electrónico del autor, el historial de revisión del documento y
+otras cosas. Por ahora, solo agregaremos el título del artículo y el
+nombre del autor.</para>
+</listitem>
+<listitem>
+<para> <link xlink:href="https://google.com" >  Luego del encabezado aparecen las secciones de primer nivel,
+se pueden agregar secciones y subsecciones,ressetando el orden de
+prioridad. </link> </para>
+</listitem>
+</itemizedlist>
+</section>
+<section>
+<title>Etiquetas</title>
+</section>
+</section>
+<section>
+<title>Control ee errores</title>
+</section>
+<section>
+<title>Modos de ejecución del intérprete</title>
+</section>
+<section>
+<title>Documentación del trabajo</title>
+</section>
+<section>
+<title>Presentación y Criterios dd evaluación</title>
+</section>
+<section>
+<title>Ejeplos</title>
+</section>
+</article>
